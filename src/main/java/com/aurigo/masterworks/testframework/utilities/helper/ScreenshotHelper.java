@@ -12,6 +12,10 @@ public class ScreenshotHelper extends BasePage {
 
     private WebDriver driver;
 
+    protected ScreenshotHelper(WebDriver driver) {
+        super(driver);
+    }
+
     public String takeFullScreenshotAndReturnBase64String(String title) {
         String base64String = "";
         try {

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "idContentFrame",
+    "type": "id",
+    "value": "contentFrame"
+  },
+  {
+    "name": "xpathTreeExpandAllBtn",
+    "type": "xpath",
+    "value": "//div[@id = 'ExpandAll']"
+  },
+  {
+    "name": "recentProjects",
+    "type": "xpath",
+    "value": ".//nobr[.='Recent Projects']/../../ul/li/a/nobr"
+  },
+  {
+    "name": "formTreeSearchBar",
+    "type": "id",
+    "value": "txtNeedle"
+  },
+  {
+    "name": "clearSearchButton",
+    "type": "xpath",
+    "value": ".//span[@class='mw-clear-search']"
+  }
+]

@@ -8,6 +8,7 @@ import com.aurigo.masterworks.testframework.utilities.helper.EnvironmentHelper;
 import com.aurigo.masterworks.testframework.utilities.helper.ScreenshotHelper;
 import com.aurigo.masterworks.testframework.webUI.BasePage;
 import com.aurigo.masterworks.testframework.webUI.constants.Constants;
+import com.aurigo.masterworks.testframework.webUI.pages.LoginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -17,10 +18,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.util.Strings;
 
 import java.lang.reflect.Method;
@@ -35,6 +33,7 @@ public class BaseTest extends BaseFramework
     protected WebDriver driver;
     private static boolean requiresWebDriver = false;
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
+    public LoginPage loginPage;
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite()
@@ -64,21 +63,28 @@ public class BaseTest extends BaseFramework
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod(Method method)
     {
-        var testName = method.getAnnotation(Test.class).testName();
         var suiteName = method.getAnnotation(Test.class).suiteName();
+
         String browserName = EnvironmentHelper.getPropertyValue("browser");
         if(browserName.equalsIgnoreCase("chrome"))
         {
             driver = new ChromeDriver();
+            driver.get(EnvironmentHelper.getPropertyValue("url"));
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-            ExtentTest extentTest = startTest(this.getClass().getSimpleName(), this.getClass().getName());
-            test.set(extentTest);
-            extentTest.assignCategory(suiteName);
         }
+
+        loginPage = new LoginPage(driver);
+
+        ExtentTest extentTest = startTest(this.getClass().getSimpleName(), this.getClass().getName());
+        test.set(extentTest);
+        extentTest.assignCategory(suiteName);
     }
 
+    public WebDriver getDriver()
+    {
+        return this.driver;
+    }
 
     public <TPage extends BasePage> TPage getPage(Class<TPage> page) {
         return GetInstance(page, driver);
@@ -90,7 +96,6 @@ public class BaseTest extends BaseFramework
     {
         WebDriver driver = DriverManager.getDriver();
         String screenShotBase64String = "";
-        var testCaseIds = result.getMethod().getConstructorOrMethod().getMethod().getDeclaredAnnotation(TestInfo.class).testIds();
 
         String comment = null;
         if (result.getStatus() == ITestResult.FAILURE) {
@@ -120,6 +125,14 @@ public class BaseTest extends BaseFramework
         flushReport();
     }
 
+    @AfterSuite(alwaysRun = true)
+    public void afterSuite() {
+        if (driver != null) {
+            driver.quit();
+        }
+       flushReport();
+    }
+
     private static void flushReport() {
         try {
             report.flush();
@@ -127,5 +140,7 @@ public class BaseTest extends BaseFramework
             logger.error("Error occurred while flushing the report -" + ex.getMessage());
         }
     }
+
+
 
 }

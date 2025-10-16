@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class BaseFramework {
 
-    protected static final String userDir = System.getProperty("user.dir");
+    public static final String userDir = System.getProperty("user.dir");
     protected static ExtentSparkReporter htmlReporter;
     protected static ExtentReports report;
     private static Logger logger = LogManager.getLogger(BaseFramework.class);
