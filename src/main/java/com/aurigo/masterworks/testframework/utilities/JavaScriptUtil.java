@@ -6,15 +6,26 @@ import org.openqa.selenium.WebElement;
 
 public class JavaScriptUtil {
 
-    public void clickElementByJs(WebElement element, WebDriver driver)
+    public static void clickElementByJs(WebElement element, WebDriver driver)
     {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
 
-    public void scrollIntoView(WebElement element, WebDriver driver)
+    public static void clickElementByJS(WebElement element, WebDriver driver) {
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("arguments[0].click();", element);
+    }
+
+    public static void scrollIntoView(WebElement element, WebDriver driver)
     {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);");
+    }
+
+    public static String getCurrentFrame(WebDriver driver)
+    {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (String) js.executeScript("return self.name;");
     }
 }

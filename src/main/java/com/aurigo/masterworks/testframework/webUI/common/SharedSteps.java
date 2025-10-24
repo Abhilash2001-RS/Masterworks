@@ -11,7 +11,9 @@ public class SharedSteps extends BasePage {
     }
 
     //Login to Masterworks and return true for a successful login
-    public void login(){
-
-    }
+//    public void login(String username, String password){
+//    {
+//
+//
+//    }
 }

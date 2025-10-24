@@ -2,13 +2,11 @@ package com.aurigo.masterworks.testframework.masterworks.tests;
 
 import com.aurigo.masterworks.testframework.BaseFramework;
 import com.aurigo.masterworks.testframework.utilities.ExceptionHandler;
-import com.aurigo.masterworks.testframework.utilities.annotations.TestInfo;
 import com.aurigo.masterworks.testframework.utilities.DriverManager;
 import com.aurigo.masterworks.testframework.utilities.helper.EnvironmentHelper;
 import com.aurigo.masterworks.testframework.utilities.helper.ScreenshotHelper;
 import com.aurigo.masterworks.testframework.webUI.BasePage;
 import com.aurigo.masterworks.testframework.webUI.constants.Constants;
-import com.aurigo.masterworks.testframework.webUI.pages.LoginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -33,7 +31,7 @@ public class BaseTest extends BaseFramework
     protected WebDriver driver;
     private static boolean requiresWebDriver = false;
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
-    public LoginPage loginPage;
+
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite()
@@ -74,7 +72,7 @@ public class BaseTest extends BaseFramework
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
 
-        loginPage = new LoginPage(driver);
+        //loginPage = new LoginPage(driver);
 
         ExtentTest extentTest = startTest(this.getClass().getSimpleName(), this.getClass().getName());
         test.set(extentTest);
