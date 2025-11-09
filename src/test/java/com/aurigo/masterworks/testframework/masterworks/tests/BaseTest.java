@@ -7,6 +7,7 @@ import com.aurigo.masterworks.testframework.utilities.helper.EnvironmentHelper;
 import com.aurigo.masterworks.testframework.utilities.helper.ScreenshotHelper;
 import com.aurigo.masterworks.testframework.webUI.BasePage;
 import com.aurigo.masterworks.testframework.webUI.constants.Constants;
+import com.aurigo.masterworks.testframework.webUI.pages.LoginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -71,8 +72,6 @@ public class BaseTest extends BaseFramework
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
-
-        //loginPage = new LoginPage(driver);
 
         ExtentTest extentTest = startTest(this.getClass().getSimpleName(), this.getClass().getName());
         test.set(extentTest);

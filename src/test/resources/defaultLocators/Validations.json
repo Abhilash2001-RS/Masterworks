@@ -1,0 +1,107 @@
+[
+  {
+    "name": "classToastMessage",
+    "type": "className",
+    "value": "toast-message"
+  },
+  {
+    "name": "treeDiv",
+    "type": "xpath",
+    "value": ".//div[@id='treeDiv']"
+  },
+  {
+    "name": "westLayoutDiv",
+    "type": "xpath",
+    "value": ".//div[@id='westLayoutDiv']"
+  },
+  {
+    "name": "expandCollapseMenuBtn",
+    "type": "xpath",
+    "value": ".//div[contains(@class,'ui-layout-toggler')]"
+  },
+  {
+    "name": "expandTreeBtn",
+    "type": "xpath",
+    "value": ".//div[@id='ExpandAll']"
+  },
+  {
+    "name": "collapseTreeBtn",
+    "type": "xpath",
+    "value": ".//div[@id='CloseAll']"
+  },
+  {
+    "name": "leafNode",
+    "type": "xpath",
+    "value": ".//div[@id='treeWrapper']//li[contains(@class,'jstree-leaf')]"
+  },
+  {
+    "name": "noRecordsFoundDiv",
+    "type": "xpath",
+    "value": "//div[contains(@id,'MWGrid_GridData')]//div[contains(text() ,'No records to display')]"
+  },
+  {
+    "name": "loginButton",
+    "type": "id",
+    "value": "btnLogin"
+  },
+  {
+    "name": "errorMessage",
+    "type": "className",
+    "value": "lblCErr"
+  },
+  {
+    "name": "stackTraceLbl",
+    "type": "xpath",
+    "value": "//*[text() = 'Stack Trace:']"
+  },
+  {
+    "name": "visibleMenuTabItem",
+    "type": "xpath",
+    "value": ".//ul[@id='MenuTabsUL']/li[contains(@style,'display: block;')]"
+  },
+  {
+    "name": "expandedFolder",
+    "type": "xpath",
+    "value": ".//div[@id='treeWrapper']//li[contains(@class,'jstree-open')]"
+  },
+  {
+    "name": "collapsedFolder",
+    "type": "xpath",
+    "value": ".//div[@id='treeWrapper']//li[contains(@class,'jstree-closed')]"
+  },
+  {
+    "name": "stackTraceText",
+    "type": "tagName",
+    "value": "pre"
+  },
+  {
+    "name": "selectedModuleNameSpan",
+    "type": "xpath",
+    "value": ".//div[@id='westLayoutDiv']//span[@id='selectedMenuSectionText']"
+  },
+  {
+    "name": "breadCrumbsPopupMenuActive",
+    "type": "xpath",
+    "value": ".//div[contains(@class,'breadCrumbsMenu active')]"
+  },
+  {
+    "name": "cancelRegistrationBtn",
+    "type": "xpath",
+    "value": "//input[@id='btnCancel']"
+  },
+  {
+    "name": "ribbonBarControl",
+    "type": "id",
+    "value": "ctl00_MainToolBar_RadRibbonBarControl"
+  },
+  {
+    "name": "documentationPageHeaderId",
+    "type": "id",
+    "value": "ariaid-title1"
+  },
+  {
+    "name": "pageTabHeader",
+    "type": "xpath",
+    "value": "//a[@aria-controls='treeDiv']"
+  }
+]

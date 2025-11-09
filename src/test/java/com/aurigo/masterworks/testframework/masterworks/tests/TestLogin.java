@@ -1,7 +1,9 @@
 package com.aurigo.masterworks.testframework.masterworks.tests;
 
+import com.aurigo.masterworks.testframework.webUI.common.SharedSteps;
 import com.aurigo.masterworks.testframework.webUI.pages.HomePage;
 import com.aurigo.masterworks.testframework.webUI.pages.LoginPage;
+import lombok.extern.java.Log;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;

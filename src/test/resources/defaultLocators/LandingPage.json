@@ -1,0 +1,102 @@
+[
+  {
+    "name": "enterpriseDashboardTab",
+    "type": "xpath",
+    "value": "//a[contains(text(),'Enterprise Dashboard')]"
+  },
+  {
+    "name": "usernameLink",
+    "type": "id",
+    "value": "lblUserName"
+  },
+  {
+    "name": "logoutLink",
+    "type": "xpath",
+    "value": "//a[contains(@id,'lnkLogout')]/.."
+  },
+  {
+    "name": "viewProfileLink",
+    "type": "xpath",
+    "value": ".//a[@id='lnkProfile']/.."
+  },
+  {
+    "name": "aboutLink",
+    "type": "xpath",
+    "value": ".//a[@id='lnkAboutMW']/.."
+  },
+  {
+    "name": "aboutPopupContainer",
+    "type": "id",
+    "value": "masterworksInfoBody"
+  },
+  {
+    "name": "aboutPopupLogo",
+    "type": "xpath",
+    "value": ".//img[@id='AboutImgAppLogo']"
+  },
+  {
+    "name": "aboutPopupBuildVersion",
+    "type": "xpath",
+    "value": "//div[@id='mwVersion']/descendant::span[@id='copyright_lblVersion']"
+  },
+  {
+    "name": "aboutPopupCloseButton",
+    "type": "xpath",
+    "value": ".//section[@id='masterworksInfoFooter']//span[.='Close']"
+  },
+  {
+    "name": "favoritesButton",
+    "type": "id",
+    "value": "favoritesTrigger"
+  },
+  {
+    "name": "addToFavoritesButton",
+    "type": "id",
+    "value": "addPageAsNewFavorite"
+  },
+  {
+    "name": "favoritesListButton",
+    "type": "id",
+    "value": "favoriteListBtn"
+  },
+  {
+    "name": "favoritesBodyContainer",
+    "type": "id",
+    "value": "favoritesBodyContainer"
+  },
+  {
+    "name": "newFolderCheckBox",
+    "type": "id",
+    "value": "cbNewFolder"
+  },
+  {
+    "name": "newFolderNameTextBox",
+    "type": "id",
+    "value": "tbFolderName"
+  },
+  {
+    "name": "addFavoriteButton",
+    "type": "id",
+    "value": "btnFavAdd"
+  },
+  {
+    "name": "deleteFavoriteButton",
+    "type": "id",
+    "value": "btnFavDelete"
+  },
+  {
+    "name": "helpLink",
+    "type": "xpath",
+    "value": ".//a[@id='lnkHelp']/.."
+  },
+  {
+    "name": "cancelFavoriteOperationButton",
+    "type": "id",
+    "value": "btnFavCancel"
+  },
+  {
+    "name": "changePasswordLink",
+    "type": "xpath",
+    "value": ".//a[@id='lnkChangePassword']/.."
+  }
+]

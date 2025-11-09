@@ -1,9 +1,11 @@
 package com.aurigo.masterworks.testframework.utilities.helper;
 
+import com.aurigo.masterworks.testframework.utilities.JavaScriptUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
@@ -59,6 +61,20 @@ public class ElementHelper extends WaitHelper {
         }
     }
 
+    public String waitAndGetText(By locator) {
+        return explicitWait().until(ExpectedConditions.visibilityOf(getElement(locator))).getText();
+    }
+
+    public WebElement getElementNoWait(By locator) {
+        WebElement element;
+        element = driver.findElement(locator);
+        var flash = EnvironmentHelper.getPropertyValue("elementFlash");
+        if (flash.equalsIgnoreCase("yes")) {
+            JavaScriptUtil.flash(element, driver);
+        }
+        return element;
+    }
+
     public boolean isElementDisplayed(By locator) {
         try {
             var element = driver.findElement(locator);
@@ -93,6 +109,10 @@ public class ElementHelper extends WaitHelper {
 
     public String getLocatorAsString(By locator) {
         return locator.toString().substring(locator.toString().indexOf(":") + 1).trim();
+    }
+
+    public void doSendKeys(Keys keyToPress) {
+        actions.sendKeys(keyToPress).perform();
     }
 
     public void scrollToView(WebElement element) {

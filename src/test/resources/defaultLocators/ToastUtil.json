@@ -1,0 +1,22 @@
+[
+  {
+    "name": "toastContainer",
+    "type": "id",
+    "value": "toast-container"
+  },
+  {
+    "name": "toastCloseButton",
+    "type": "xpath",
+    "value": "//div[@id='toast-container']//button[@class='toast-close-button']"
+  },
+  {
+    "name": "toastMessage",
+    "type": "xpath",
+    "value": "//*[@id='toast-container']//div[contains(@class,'message')]"
+  },
+  {
+    "name": "toastLargeMessage",
+    "type": "xpath",
+    "value": "//*[@id='toast-container']/div/div[@class = 'toast-largemessage']"
+  }
+]

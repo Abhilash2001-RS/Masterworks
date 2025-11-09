@@ -1,0 +1,97 @@
+[
+  {
+    "name": "linkDocument",
+    "type": "xpath",
+    "value": "//input[@value='Link Document']"
+  },
+  {
+    "name": "uploadDocument",
+    "type": "xpath",
+    "value": "//input[contains(@id,'UploadFileControl') and not(contains(@name,'Attachments'))]"
+  },
+  {
+    "name": "downloadDocument",
+    "type": "xpath",
+    "value": "//input[contains(@id,'btnDownload')]"
+  },
+  {
+    "name": "deleteDocument",
+    "type": "xpath",
+    "value": "//input[contains(@id,'btnDownload')]/parent::td/parent::tr//input[contains(@id,'btnDelete')]"
+  },
+  {
+    "name": "attachmentPageTable",
+    "type": "id",
+    "value": "ctl00_C1_docgrid_ctl00"
+  },
+  {
+    "name": "documentPicker",
+    "type": "xpath",
+    "value": "//div[not(contains(@style,'none'))]/div[contains(@id,'DocumentPicker') and not(contains(@style,' '))]"
+  },
+  {
+    "name": "okButtonPicker",
+    "type": "xpath",
+    "value": "//div[not(contains(@id,'appWorkflow'))]//input[contains(@id,'Ok') and @value ='OK']"
+  },
+  {
+    "name": "attachmentLabel",
+    "type": "xpath",
+    "value": "//legend[.='Attachments']"
+  },
+  {
+    "name": "cancelButtonPicker",
+    "type": "xpath",
+    "value": "//input[contains(@id,'btnCncl')]"
+  },
+  {
+    "name": "editDocumentTitle",
+    "type": "xpath",
+    "value": "//textarea[@aria-label = 'Document Title']"
+  },
+  {
+    "name": "attachmentTitle",
+    "type": "xpath",
+    "value": "//strong[contains(text(),'Attachments')]"
+  },
+  {
+    "name": "noRecordDisplayPath",
+    "type": "xpath",
+    "value": "//div[contains(text(),'No records to display.')]"
+  },
+  {
+    "name": "attachmentTable",
+    "type": "xpath",
+    "value": "//table[contains(@id,'gridAttachment') and not(contains(@id,'Header')) and not(contains(@id,'WF'))]"
+  },
+  {
+    "name": "attachmentTableHeader",
+    "type": "xpath",
+    "value": "//table[contains(@id,'gridAttachment') and (contains(@id,'Header')) and not(contains(@id,'WF'))]"
+  },
+  {
+    "name": "filterOptionMenu",
+    "type": "xpath",
+    "value": "//ul[contains(@class,'rmActive rmVertical rmGroup rmLevel1')]"
+  },
+  {
+    "name": "linkedRecordFrame",
+    "type": "xpath",
+    "value": "//div[@id='overlayWindow']//iframe"
+  },
+  {
+    "name": "searchWithinComboBox",
+    "type": "xpath",
+    "value": "//div[@role = 'listbox']"
+  },
+  {
+    "name": "attachmentsTitle",
+    "type": "xpath",
+    "value": "//tr[contains(@id,'trAttachmentCaption') and contains(@style,'block')]"
+  },
+  {
+    "name": "pageTabHeaderName",
+    "type": "xpath",
+    "value": "//ul[@id='PageTabs_tabBar']/li[not(contains(@style,'default'))]/descendant::a[@role='tab']"
+  }
+]

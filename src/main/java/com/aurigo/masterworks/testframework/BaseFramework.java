@@ -26,8 +26,7 @@ public class BaseFramework {
         return extentTestMap.get((int) (Thread.currentThread().getId()));
     }
 
-    public synchronized <TPage extends BasePage> TPage GetInstance(Class<TPage> page, WebDriver driver)
-    {
+    public synchronized <TPage extends BasePage> TPage GetInstance(Class<TPage> page, WebDriver driver) {
         try {
             if (driver == null) {
                 logger().warning(String.format("Driver object is NULL for %s class.", page.getName()));

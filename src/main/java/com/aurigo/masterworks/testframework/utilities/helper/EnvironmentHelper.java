@@ -32,8 +32,7 @@ public class EnvironmentHelper extends BaseFramework
         try {
             properties.load(new FileInputStream(rootPath));
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             logger.info("Error while getting Properties: " + e.getMessage());
         }
         return properties;

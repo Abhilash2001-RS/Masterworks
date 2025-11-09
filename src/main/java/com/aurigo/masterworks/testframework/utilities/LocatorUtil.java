@@ -29,8 +29,7 @@ public class LocatorUtil extends BaseFramework {
     }
 
 
-    public static  HashMap<String, Locator> getRibbonLocators()
-    {
+    public static  HashMap<String, Locator> getRibbonLocators() {
         String jsonFileName="RibbonMenu.json";
         String filePath = getFilePath(jsonFileName);
         return getLocatorMapFromPath(filePath);
@@ -96,7 +95,6 @@ public class LocatorUtil extends BaseFramework {
         if (locatorsDirectory == null) {
             locatorsDirectory = EnvironmentHelper.getPropertyValue("locatorsDirectory");
         }
-
         var filePathToDefinedDirectory = Paths.get(Constants.TEST_CLASSES_FOLDER_PATH, locatorsDirectory, jsonFileName).toString();
         var locatorsFile = new File(filePathToDefinedDirectory);
         if (locatorsFile.exists()) {

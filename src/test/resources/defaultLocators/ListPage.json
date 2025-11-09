@@ -1,0 +1,222 @@
+[
+  {
+    "name": "listPageHeader",
+    "type": "id",
+    "value": "ctl00_C1_MWGrid_ctl00_Header"
+  },
+  {
+    "name": "listPageMultiSelectCheckBox",
+    "type": "xpath",
+    "value": ".//*[contains(@id,'_MultiSelectCheckBox')]"
+  },
+  {
+    "name": "listPageFirstPageButton",
+    "type": "xpath",
+    "value": ".//div[@class='rgWrap rgNumPart']//span[1]"
+  },
+  {
+    "name": "listPageNextPageButton",
+    "type": "xpath",
+    "value": "//input[@class='rgPageNext']"
+  },
+  {
+    "name": "customizeListPageSizeTextBox",
+    "type": "id",
+    "value": "igtxtC2_ColumnSettings_wnePageSize"
+  },
+  {
+    "name": "customizeListSaveButton",
+    "type": "id",
+    "value": "C2_ColumnSettings_btnSave"
+  },
+  {
+    "name": "customizeListCancelButton",
+    "type": "id",
+    "value": "C2_ColumnSettings_btnCancel"
+  },
+  {
+    "name": "listPageMainGrid",
+    "type": "id",
+    "value": "mainGrid"
+  },
+  {
+    "name": "isDefaultBtn",
+    "type": "id",
+    "value": "chkIsDefaultListFilter"
+  },
+  {
+    "name": "filterPopUpAddBtn",
+    "type": "id",
+    "value": "btnAddSaveFilterManager"
+  },
+  {
+    "name": "listPageDataTable",
+    "type": "xpath",
+    "value": ".//div[@id='ctl00_C1_MWGrid_GridData']//table/tbody"
+  },
+  {
+    "name": "listPage",
+    "type": "id",
+    "value": "ctl00_C1_MWGrid_ctl00"
+  },
+  {
+    "name": "listPageRowCheckbox",
+    "type": "xpath",
+    "value": ".//input[contains(@id,'MultiSelectCheckBox')]"
+  },
+  {
+    "name": "filterNameText",
+    "type": "xpath",
+    "value": "//div[@id='divAddData']//input[@type='text']"
+  },
+  {
+    "name": "filterPopUp",
+    "type": "id",
+    "value": "divFilterManager"
+  },
+  {
+    "name": "customizeListScopeTable",
+    "type": "id",
+    "value": "C2_ColumnSettings_rblScope"
+  },
+  {
+    "name": "listPageGridLoadingDivHidden",
+    "type": "xpath",
+    "value": "//td[@class = 'rgStatus']/div[@style = 'visibility:hidden;']"
+  },
+  {
+    "name": "listPageGridLoadingDiv",
+    "type": "xpath",
+    "value": "//td[@class = 'rgStatus']"
+  },
+  {
+    "name": "listPagePageInfo",
+    "type": "xpath",
+    "value": ".//*[@id='ctl00_C1_MWGrid_ctl00_Pager']//div[@class = 'rgWrap rgInfoPart']"
+  },
+  {
+    "name": "idHeader",
+    "type": "xpath",
+    "value": "//a[contains(text(),'ID')]"
+  },
+  {
+    "name": "chooseFile",
+    "type": "id",
+    "value": "C1_FileUpload1"
+  },
+  {
+    "name": "uploadButton",
+    "type": "id",
+    "value": "C1_btnUpload"
+  },
+  {
+    "name": "saveButtonInImport",
+    "type": "id",
+    "value": "C1_btnSave1"
+  },
+  {
+    "name": "lastPageBtn",
+    "type": "xpath",
+    "value": "//input[@title='Last Page']"
+  },
+  {
+    "name": "importSuccessMessage",
+    "type": "xpath",
+    "value": "//div[@id='coreMainControlDiv']//span[contains(text(),'')]"
+  },
+  {
+    "name": "listPageMultiSelectCheckBoxValue",
+    "type": "id",
+    "value": "ctl00_C1_MWGrid_ctl00_ctl02_ctl01_MultiSelectCheckBox"
+  },
+  {
+    "name": "listPageMultiSelectCheckAllItem",
+    "type": "xpath",
+    "value": "//input[@id='chk_checkAllItem']"
+  },
+  {
+    "name": "filterButton",
+    "type": "id",
+    "value": "btnFilter"
+  },
+  {
+    "name": "filterPopUpWindow",
+    "type": "id",
+    "value": "popUpFilter"
+  },
+  {
+    "name": "clearFilter",
+    "type": "xpath",
+    "value": "//span[text()='Clear Filter']"
+  },
+  {
+    "name": "saveFilter",
+    "type": "xpath",
+    "value": "//div[not(contains(@style,'none'))]/input[(@title='Save') and not(contains(@style,'none'))]"
+  },
+  {
+    "name": "editFilter",
+    "type": "xpath",
+    "value": "//div[not(contains(@style,'none'))]/input[(@title='Edit') and not(contains(@style,'none'))]"
+  },
+  {
+    "name": "deleteFilter",
+    "type": "xpath",
+    "value": "//div[not(contains(@style,'none'))]/input[(@title='Delete') and not(contains(@style,'none'))]"
+  },
+  {
+    "name": "defaultFilter",
+    "type": "xpath",
+    "value": "//div[not(contains(@style,'none'))]/input[(@title='Default') and not(contains(@style,'none'))]"
+  },
+  {
+    "name": "applyFilter",
+    "type": "xpath",
+    "value": "//input[@value ='Apply Filter']"
+  },
+  {
+    "name": "addFilter",
+    "type": "id",
+    "value": "txtAddFilter"
+  },
+  {
+    "name": "deselectRows",
+    "type": "xpath",
+    "value": "//div[@class='selecteditem-section']/button"
+  },
+  {
+    "name": "emailMergePopUp",
+    "type": "xpath",
+    "value": "//*[@id='C2_pnlMailMergeAndEmail']"
+  },
+  {
+    "name": "recipientPicker",
+    "type": "xpath",
+    "value": "//*[@id='C2_mmMailMergeAndEmailControl_btnUsers']"
+  },
+  {
+    "name": "recipientPickerContainer",
+    "type": "xpath",
+    "value": "//*[@id='C2_mmMailMergeAndEmailControl_pickerUsersEmail_pickerContainer']"
+  },
+  {
+    "name": "mailMergeConfigSelectionXpath",
+    "type": "id",
+    "value": "C2_mmMailMergeAndEmailControl_ddlMappingList"
+  },
+  {
+    "name": "mailMergeBodyTemplateSelectionXpath",
+    "type": "id",
+    "value": "C2_mmMailMergeAndEmailControl_ddlMailBodyTemp"
+  },
+  {
+    "name": "mailMergeSaveButtonXpath",
+    "type": "xpath",
+    "value": "//*[@id='C2_mmMailMergeAndEmailControl_btnMailMerge']"
+  },
+  {
+    "name": "selectedRowCount",
+    "type": "xpath",
+    "value": "//div[@id='divSelectedItem' and (contains(@style,'display: block') or contains(@style,'display:block'))]/descendant::span[@id='SelectedRecordsCount']"
+  }
+]
