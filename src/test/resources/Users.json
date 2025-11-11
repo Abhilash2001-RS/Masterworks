@@ -1,0 +1,20 @@
+[
+  {
+    "username": "Abhilash",
+    "password": "Deldotsit@20231",
+    "roles": ["Administrator"],
+    "isBusy": false
+  },
+  {
+    "username": "AutomationUser1",
+    "password": "Aurigo@1234567",
+    "roles": ["Administrator"],
+    "isBusy": false
+  },
+  {
+    "username": "AutomationUser2",
+    "password": "Aurigo@1234567",
+    "roles": ["Administrator"],
+    "isBusy": false
+  }
+]

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class User {
 
-    private String username;
-    private String password;
+    public String username;
+    public String password;
     public List<String> roles;
     public boolean isBusy;
 

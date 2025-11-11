@@ -1,0 +1,67 @@
+[
+  {
+    "name": "workFlowButton",
+    "type": "id",
+    "value": "MainToolBar_DoWorkflowAction"
+  },
+  {
+    "name": "workFlowPopUpOkButton",
+    "type": "id",
+    "value": "appWorkflow_btnOk"
+  },
+  {
+    "name": "workFlowPopUpCancelButton",
+    "type": "id",
+    "value": "appWorkflow_btnCncl"
+  },
+  {
+    "name": "workFlowPopUpNotes",
+    "type": "id",
+    "value": "appWorkflow_txtNotes"
+  },
+  {
+    "name": "workflowHistoryTable",
+    "type": "xpath",
+    "value": "//div[@id = 'upWFlowContainer']//div[@class = 'flexItem']"
+  },
+  {
+    "name": "workFlowHistoryPopUpCloseButton",
+    "type": "xpath",
+    "value": "//div[@id='appWorkflowHistory_aspPnlWF']/preceding-sibling::div/button[text()='Close']"
+  },
+  {
+    "name": "workFlowHistoryWindow",
+    "type": "xpath",
+    "value": "//span[contains(text(),'Workflow Status & History')]"
+  },
+  {
+    "name": "emailRecipients",
+    "type": "xpath",
+    "value": "//input[@role='listbox']"
+  },
+  {
+    "name": "workflowNotesLabel",
+    "type": "xpath",
+    "value": "//span[contains(text(),'Notes')]"
+  },
+  {
+    "name": "workflowHistoryMoreDetails",
+    "type": "xpath",
+    "value": "//input[@id='appWorkflowHistory_btnOk']"
+  },
+  {
+    "name": "workflowHistoryReport",
+    "type": "xpath",
+    "value": "//input[@id='C2_btnShowHistoryPDF']"
+  },
+  {
+    "name": "workflowHistoryReportTitle",
+    "type": "xpath",
+    "value": "//div[text()='Workflow History Report']"
+  },
+  {
+    "name": "workflowActionOptionContainer",
+    "type": "xpath",
+    "value": "//a[@id='DoWorkflowActionDUMMY']"
+  }
+]

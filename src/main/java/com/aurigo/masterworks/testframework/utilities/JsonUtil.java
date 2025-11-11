@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 public class JsonUtil {
 
     //converts a JSON string (jsonResponse) into a Java object of the specified type (classType) using Gson.
-    public static <ClassType> ClassType deserialize(Class<ClassType> type, String jsonResponse)
+    public static <ClassType> ClassType deSerialize(Class<ClassType> type, String jsonResponse)
     {
         try{
             Gson gson = new Gson();

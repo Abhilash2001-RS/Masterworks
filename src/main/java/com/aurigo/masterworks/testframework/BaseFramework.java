@@ -1,6 +1,9 @@
 package com.aurigo.masterworks.testframework;
 
+import com.aurigo.masterworks.testframework.utilities.helper.EnvironmentHelper;
+import com.aurigo.masterworks.testframework.utilities.models.environment.Environment;
 import com.aurigo.masterworks.testframework.webUI.BasePage;
+import com.aurigo.masterworks.testframework.webUI.constants.enums.BrowserType;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -11,11 +14,13 @@ import org.openqa.selenium.WebDriver;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BaseFramework {
+public abstract class BaseFramework {
 
     public static final String userDir = System.getProperty("user.dir");
     protected static ExtentSparkReporter htmlReporter;
     protected static ExtentReports report;
+    protected static Environment currentEnvironment;
+    protected static BrowserType browserType;
     private static Logger logger = LogManager.getLogger(BaseFramework.class);
     private static final Map<Integer, ExtentTest> extentTestMap = new HashMap<>();
     private static final HashMap<WebDriver, HashMap<String, Object>> instanceMap = new HashMap<>();
@@ -59,6 +64,15 @@ public class BaseFramework {
         ExtentTest test = report.createTest(className, description);
         extentTestMap.put((int) (Thread.currentThread().getId()), test);
         return test;
+    }
+
+    protected void initBrowserType() {
+        String browser = System.getProperty("browser");
+        if (browser == null) {
+            browser = EnvironmentHelper.getPropertyValue("browser");
+        }
+
+        browserType = BrowserType.valueOf(browser);
     }
 
 }
