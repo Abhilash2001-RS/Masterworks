@@ -244,6 +244,19 @@ public class ElementHelper extends WaitHelper {
         doClickUsingActions(locator);
         actions.sendKeys(value.toString()).perform();
     }
+    /**
+     * Send Keys on the WebElement using locator.
+     *
+     * @param locator Webelement locator.
+     * @param value   Value to be sent.
+     */
+    public void doSendKeys(By locator, Keys value) {
+        var element = getElement(locator);
+        scrollToView(element);
+        element.clear();
+        element.sendKeys(value);
+    }
+
 
     public void selectComboBoxItemByText(By locator, String value) {
         Select comboBoxContent = new Select(getElement(locator));

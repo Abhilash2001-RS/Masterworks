@@ -27,12 +27,27 @@ public class ToastUtil extends BasePage  {
         toastMessage = locators.get("toastMessage");
     }
 
+
+    /**
+     * Waits and Gets Toast message if only one Toast Exists.
+     *
+     * @return Toast error message
+     */
+    public String waitAndGetMessageForSingleToast() {
+        return waitAndGetMessageForSingleToast(true);
+    }
+
+    /**
+     * Waits and Gets Toast message if only one Toast Exists.
+     *
+     * @param requireScreenShot Is screenshot required.
+     * @return Toast error message
+     */
     public String waitAndGetMessageForSingleToast(boolean requireScreenShot) {
         getPage(Navigation.class).switchFrameToContent();
         waitHelper.waitForElementPresent(toastContainer);
         waitHelper.waitForElementClickable(toastMessage);
-        String toastMsg = elementHelper.doGetText(toastMessage);
-
+        String toastMsg = elementHelper.getElement(toastMessage).getText();
         if (requireScreenShot) {
             getPage(ScreenshotHelper.class).takeElementScreenshot(toastContainer, "Toast Message");
         }
@@ -40,29 +55,44 @@ public class ToastUtil extends BasePage  {
         return toastMsg;
     }
 
-    public String waitAndGetMessageForSingleToast() {
-        return waitAndGetMessageForSingleToast(true);
-    }
-
-    public void getAllToastMessages(boolean requireScreenShot){
+    /**
+     * Get all toasts on screen
+     *
+     * @param requireScreenShot if true, a screenshot is taken
+     * @return list of toast messages found
+     */
+    public List<String> getAllToastMessages(boolean requireScreenShot) {
         getPage(Navigation.class).switchFrameToContent();
         waitHelper.waitForElementPresent(toastContainer);
-        if(requireScreenShot){
+        if (requireScreenShot) {
             getPage(ScreenshotHelper.class).takeElementScreenshot(toastContainer, "Toast Message");
         }
-        var  messageElements = elementHelper.getElements(toastMessage);
+        var messageElements = elementHelper.getElements(toastMessage);
         List<String> messages = new ArrayList<>();
-        for ( var element : messageElements){
+        for (var element : messageElements) {
             messages.add(element.getText());
         }
+        return messages;
     }
 
-    public void waitAndCloseForSingleToast(){
+    /**
+     * Click close button for one existing toast.
+     */
+    public void waitAndCloseForSingleToast() {
         getPage(Navigation.class).switchFrameToContent();
-        if(elementHelper.isElementDisplayed(toastCloseButton)){
+        if (elementHelper.isElementDisplayed(toastCloseButton)) {
             elementHelper.doClick(toastCloseButton);
         }
-        waitHelper.waitUntilElementDisappears(toastCloseButton);
+        waitHelper.waitUntilElementDisappears(toastContainer);
+    }
+
+    /**
+     * Get message from one existing information toast.
+     */
+    public void waitForInformationSingleToast() {
+        getPage(Navigation.class).switchFrameToContent();
+        waitHelper.waitForElementPresent(toastContainer);
+        waitHelper.waitUntilElementDisappears(toastContainer);
     }
 
     /**
@@ -70,15 +100,15 @@ public class ToastUtil extends BasePage  {
      *
      * @return true if the toast message is present
      */
-    public void validatePresenceOfToastMessage(){
+    public boolean validatePresenceOfToastMessage() {
         getPage(Navigation.class).switchFrameToContent();
-        getPage(Validations.class).verifyElementExists(toastContainer);
+        return getPage(Validations.class).verifyElementExists(toastContainer);
     }
 
     /**
      * Waits for a toast to disappear.
      */
-    public void waitForToastDisappears(){
+    public void waitForToastDisappears() {
         getPage(Navigation.class).switchFrameToContent();
         waitHelper.waitForElementPresent(toastContainer);
         waitHelper.waitUntilElementDisappears(toastContainer);

@@ -7,6 +7,8 @@ import com.aurigo.masterworks.testframework.utilities.LocatorUtil;
 import com.aurigo.masterworks.testframework.webUI.common.RibbonMenu;
 import com.aurigo.masterworks.testframework.webUI.constants.Constants;
 import com.aurigo.masterworks.testframework.webUI.constants.enums.RibbonIcons;
+
+import com.google.common.base.Stopwatch;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +16,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class WaitHelper extends BaseFramework
 {
@@ -114,7 +117,12 @@ public class WaitHelper extends BaseFramework
         waitForElementToBePresentAndClickable(locator);
     }
 
-
+    public void waitForAjaxToComplete(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Stopwatch stopWatch = Stopwatch.createStarted();
+        wait.until(x-> js.executeScript("return jQuery.active==0"));
+        logger().info(String.format("time taken for ajax call to be completed = %d milliseconds", stopWatch.elapsed(TimeUnit.MILLISECONDS)));
+    }
 
     public void waitForPageToLoad(RibbonIcons ribbonIcon){
         waitForPageToLoad();
